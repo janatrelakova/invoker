@@ -1,6 +1,6 @@
 import json
 import sys
-from typing import Dict, List
+from typing import List
 import requests
 from requests.exceptions import RequestException
 
@@ -53,13 +53,14 @@ def ping_endpoints(endpoints: List[Endpoint], host: str):
 
 
 def main():
-    if len(sys.argv) < 2:
-        print("Usage: python open_file.py <file_path>")
+    if len(sys.argv) != 3:
+        print("Usage: python open_file.py <file_path> <host>")
         sys.exit(1)
 
     file_path = sys.argv[1]
+    host = sys.argv[2]
     endpoints = load(file_path)
-    ping_endpoints(endpoints, 'http://localhost:8080')
+    ping_endpoints(endpoints, host)
 
 
 if __name__ == '__main__':

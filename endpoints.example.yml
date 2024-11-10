@@ -1,39 +1,78 @@
 endpoints:
-  - body: null
+  - url: "/constructs/test"
+    httpMethod: null
+    body: null
     formBody: null
-    httpMethod: GET
-    url: /constructs/test
-    times: 10
-  - body: null
+  - url: "/constructs/testAbstract"
+    httpMethod: null
+    body: null
     formBody: null
-    httpMethod: GET
-    url: /constructs/testAbstract
-    timeout: 10
-  - body: null
+  - url: "/constructs/testBean"
+    httpMethod: null
+    body: null
     formBody: null
-    httpMethod: GET
-    url: /products
-  - body: |-
-        price: 90
-        name: New product
-        id: 2
+  - url: "/products"
+    httpMethod: "GET"
+    body: null
     formBody: null
-    httpMethod: POST
-    url: /products
-  - body: null
+  - url: "/products"
+    httpMethod: "POST"
+    body:
+    - "price: 123"
+    - "name: Jane Doe"
+    - "id: 1"
     formBody: null
-    httpMethod: POST
-    url: /products/1
-  - body: |-
-      price: 123.5
-      name: Book
-      id: 1
+  - url: "/products/1"
+    httpMethod: "GET"
+    body: null
     formBody: null
-    httpMethod: PUT
-    url: /products/1
-    times: 3
-    timeout: 10
-  - body: null
-    formBody: name=John+Smith&age=18
-    httpMethod: GET
-    url: /users/hello
+  - url: "/products/1"
+    httpMethod: "PUT"
+    body:
+    - "price: 789"
+    - "name: John Smith"
+    - "id: 42"
+    formBody: null
+  - url: "/products/789"
+    httpMethod: "DELETE"
+    body: null
+    formBody: null
+  - url: "/users/add"
+    httpMethod: "POST"
+    body:
+    - "name: Jane Doe"
+    - "age: 18"
+    formBody: null
+  - url: "/users/greet"
+    httpMethod: "GET"
+    body: null
+    formBody: "name=John+Smith&age=30"
+  - url: "/users/hello"
+    httpMethod: "GET"
+    body: null
+    formBody: "name=Jane+Doe+Smith&age=456"
+  - url: "/users/list"
+    httpMethod: "GET"
+    body: null
+    formBody: null
+  - url: "/users/search?username=Jane+Doe&age=42"
+    httpMethod: "GET"
+    body: null
+    formBody: null
+  - url: "/users/updateUserSomehow"
+    httpMethod: "PUT"
+    body:
+    - "name: Jane Doe"
+    - "age: 42"
+    formBody: null
+  - url: "/users/updateUserSomehow"
+    httpMethod: "PATCH"
+    body:
+    - "name: Jane Doe"
+    - "age: 18"
+    formBody: null
+  - url: "/users/1/products"
+    httpMethod: "GET"
+    body: null
+    formBody: null
+
