@@ -1,0 +1,39 @@
+endpoints:
+  - body: null
+    formBody: null
+    httpMethod: GET
+    url: /constructs/test
+    times: 10
+  - body: null
+    formBody: null
+    httpMethod: GET
+    url: /constructs/testAbstract
+    timeout: 10
+  - body: null
+    formBody: null
+    httpMethod: GET
+    url: /products
+  - body: |-
+        price: 90
+        name: New product
+        id: 2
+    formBody: null
+    httpMethod: POST
+    url: /products
+  - body: null
+    formBody: null
+    httpMethod: POST
+    url: /products/1
+  - body: |-
+      price: 123.5
+      name: Book
+      id: 1
+    formBody: null
+    httpMethod: PUT
+    url: /products/1
+    times: 3
+    timeout: 10
+  - body: null
+    formBody: name=John+Smith&age=18
+    httpMethod: GET
+    url: /users/hello
