@@ -16,6 +16,5 @@ class Endpoint:
 
     body: Optional[List[str]] = None
     formBody: Optional[List[str]] = None
-    queryParams: Optional[List[str]] = None
     times: Optional[int] = 1
     timeout: Optional[int] = 5
