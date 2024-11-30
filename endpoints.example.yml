@@ -1,78 +1,135 @@
+#  za hoidnu provozu
 endpoints:
-  - url: "/constructs/test"
-    httpMethod: null
-    body: null
-    formBody: null
-  - url: "/constructs/testAbstract"
-    httpMethod: null
-    body: null
-    formBody: null
-  - url: "/constructs/testBean"
-    httpMethod: null
-    body: null
-    formBody: null
-  - url: "/products"
+  - url: "/cart"
     httpMethod: "GET"
     body: null
-    formBody: null
-  - url: "/products"
+    times: 80
+  - url: "/cart"
     httpMethod: "POST"
     body:
-    - "price: 123"
-    - "name: Jane Doe"
-    - "id: 1"
-    formBody: null
-  - url: "/products/1"
+    - "name: New cart"
+    - "id: 4"
+    - "products: []"
+    times: 10
+  - url: "/cart/1"
     httpMethod: "GET"
     body: null
-    formBody: null
-  - url: "/products/1"
+    times: 40
+  - url: "/cart/1"
     httpMethod: "PUT"
     body:
-    - "price: 789"
-    - "name: John Smith"
-    - "id: 42"
-    formBody: null
-  - url: "/products/789"
+    - "name: New name for cart 1"
+    - "id: 1"
+    times: 10
+  - url: "/cart/4"
     httpMethod: "DELETE"
     body: null
-    formBody: null
-  - url: "/users/add"
+    times: 10
+  - url: "/cart/1/product"
+    httpMethod: "GET"
+    body: null
+    times: 80
+  - url: "/cart/1/product/1"
+    httpMethod: "POST"
+    body: null
+    times: 70
+  - url: "/order"
+    httpMethod: "GET"
+    body: null
+    times: 50
+  - url: "/order"
     httpMethod: "POST"
     body:
-    - "name: Jane Doe"
-    - "age: 18"
-    formBody: null
-  - url: "/users/greet"
+    - "name: New order"
+    - "id: 4"
+    times: 50
+  - url: "/order/1"
     httpMethod: "GET"
     body: null
-    formBody: "name=John+Smith&age=30"
-  - url: "/users/hello"
-    httpMethod: "GET"
-    body: null
-    formBody: "name=Jane+Doe+Smith&age=456"
-  - url: "/users/list"
-    httpMethod: "GET"
-    body: null
-    formBody: null
-  - url: "/users/search?username=Jane+Doe&age=42"
-    httpMethod: "GET"
-    body: null
-    formBody: null
-  - url: "/users/updateUserSomehow"
+    times: 50
+  - url: "/order/1"
     httpMethod: "PUT"
     body:
-    - "name: Jane Doe"
-    - "age: 42"
-    formBody: null
-  - url: "/users/updateUserSomehow"
-    httpMethod: "PATCH"
-    body:
-    - "name: Jane Doe"
-    - "age: 18"
-    formBody: null
-  - url: "/users/1/products"
+    - "name: Update order 1"
+    - "id: 1"
+    times: 30
+  - url: "/order/4"
+    httpMethod: "DELETE"
+    body: null
+    times: 10
+  - url: "/order/1/deliver"
+    httpMethod: "POST"
+    body: null
+    times: 50
+  - url: "/order/1/pay"
+    httpMethod: "POST"
+    body: null
+    times: 50
+  - url: "/product"
     httpMethod: "GET"
     body: null
-    formBody: null
-
+    times: 100
+  - url: "/product"
+    httpMethod: "POST"
+    body:
+    - "name: New product"
+    - "id: 4"
+    - "category: CATEGORY1"
+    - "brand: BRAND1"
+    times: 10
+  - url: "/product/1"
+    httpMethod: "GET"
+    body: null
+    times: 100
+  - url: "/product/1"
+    httpMethod: "PUT"
+    body:
+    - "name: Updated product"
+    - "id: 1"
+    - "category: CATEGORY2"
+    - "brand: BRAND2"
+    times: 10
+  - url: "/product/4"
+    httpMethod: "DELETE"
+    body: null
+    times: 10
+  - url: "/user"
+    httpMethod: "GET"
+    body: null
+    times: 40
+  - url: "/user"
+    httpMethod: "POST"
+    body:
+    - "name: new user"
+    - "id: 4"
+    times: 10
+  - url: "/user/search?username=User"
+    httpMethod: "GET"
+    body: null
+    times: 50
+  - url: "/user/1"
+    httpMethod: "GET"
+    body: null
+    times: 40
+  - url: "/user/1"
+    httpMethod: "PUT"
+    body:
+    - "name: Updated name"
+    - "id: 1"
+    times: 10
+  - url: "/user/4"
+    httpMethod: "DELETE"
+    body: null
+    times: 10
+  - url: "/user/1/orders"
+    httpMethod: "GET"
+    body: null
+    times: 40
+  - url: "/wishlist/1"
+    httpMethod: "GET"
+    body: null
+    times: 20
+  - url: "/wishlist/1/product/1"
+    httpMethod: "POST"
+    body: null
+    times: 20
